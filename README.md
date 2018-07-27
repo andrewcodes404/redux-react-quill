@@ -1,4 +1,4 @@
-Very basic react starter with react-router-dom and sass
+Basic react/redux starter
 
 This a mashup of @stephenGrider [ReduxSimpleStarter](https://github.com/StephenGrider/ReduxSimpleStarter) 
 and.. [Create React App](https://github.com/facebookincubator/create-react-app).
