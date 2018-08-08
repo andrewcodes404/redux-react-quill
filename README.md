@@ -3,7 +3,7 @@ Routing with react-route-dom
 
 Setup and ready for redux-form, redux-thunk, axios, firebase
 
-you will need to set up  .env.development  in ./src
+you will need to set up  .env  in ./src
 
 Looks like this
 
