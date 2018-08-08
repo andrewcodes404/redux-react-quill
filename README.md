@@ -8,12 +8,12 @@ you will need to set up  .env.development  in ./src
 Looks like this
 
 
-REACT_APP_WEBSITE_NAME= ###-###
+REACT_APP_WEBSITE_NAME= ###-###  
 
-REACT_APP_API_KEY= ###-###
-REACT_APP_AUTHDOMIAN= ###-###
-REACT_APP_DB_URL= ###-###
-REACT_APP_PROJECT_ID= ###-###
-REACT_APP_STORAGE_BUCKET= ###-###
-REACT_APP_MESSY_ID= ###-###
+REACT_APP_API_KEY= ###-###  
+REACT_APP_AUTHDOMIAN= ###-###  
+REACT_APP_DB_URL= ###-###  
+REACT_APP_PROJECT_ID= ###-###  
+REACT_APP_STORAGE_BUCKET= ###-###  
+REACT_APP_MESSY_ID= ###-###  
 
