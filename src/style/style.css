@@ -485,12 +485,3 @@ a:active {
   display: flex;
   flex-direction: column;
   min-height: 100vh; }
-
-.hello {
-  background-color: orange;
-  color: white;
-  padding: .5rem;
-  margin-top: 1rem; }
-
-.flex-row {
-  display: flex; }

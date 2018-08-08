@@ -1,45 +1,30 @@
-import axios from "axios";
-export const FETCH_POSTS = 'FETCH_POSTS'
-export const CREATE_POST = 'CREATE_POST'
-export const FETCH_POST = 'FETCH_POST'
-export const DELETE_POST = 'DELETE_POST'
+import firebase from "firebase/app";
+import 'firebase/database'
+import uuidv1 from "uuid/v1"
+// use axios to send PSOT/GET req
+// import axios from "axios";
 
-// http://reduxblog.herokuapp.com/api/posts?key=andrewcodes404
-const ROOT_URL = 'http://reduxblog.herokuapp.com/api'
-const API_KEY = '?key=andrewcodes404'
+import { FETCH_DATA } from '../actions/actionConstants'
+import { firebaseConfig } from '../config'
 
-export function fetchPosts() {
+// create firebase instance and set db ref
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
 
-    const request = axios.get(`${ROOT_URL}/posts${API_KEY}`)
-    return {
-        type: FETCH_POSTS,
-        payload: request
+export function fetchDataAC() {
+    return dispatch => {
+        database.ref().once('value')
+            .then(snapshot => {
+                dispatch({
+                    type: FETCH_DATA,
+                    payload: snapshot.val()
+                })
+            })
     }
 }
 
-export function createPost(values, callback) {
-    const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, values)
-        .then(() => callback());
-    return {
-        type: CREATE_POST,
-        payload: request
-    }
-}
-
-export function fetchPost(id) {
-    const request = axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`)
-    return {
-        type: FETCH_POST,
-        payload: request
-    }
-}
-
-export function deletePost(id, callback) {
-    //no need for 'const request' as we are not sending in payload
-     axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`)
-        .then(() => callback());
-    return {
-        type: DELETE_POST,
-        payload: id
-    }
+export function uploadDataAC(values, callback) {
+    const userId = uuidv1()
+    firebase.database().ref(userId).set(values)
+        .then(() => callback())
 }
