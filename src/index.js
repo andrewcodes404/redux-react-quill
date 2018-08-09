@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import thunk from 'redux-thunk';
 import registerServiceWorker from './registerServiceWorker';
 
+import './style/style.css';
 import reducers from './reducers'
 import App from './components/App'
 
