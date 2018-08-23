@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { fetchDataAC } from '../actions';
-import { Link } from 'react-router-dom'
+
 class Read extends React.Component {
 
 
@@ -9,23 +9,30 @@ class Read extends React.Component {
         this.props.fetchDataAC()
     }
 
+    renderPosts = (el, key) => {
 
-    renderTitle(el, key) {
-        return (
-            <Link to={`/single/${el.id}`} key={key}>
-                <p >{el.title}</p>
-            </Link>
-        )
-    }
+        function createMarkup() {
+            return { __html: el };
+        }
+
+
+
+       return (
+           <div key={key} >
+               <div dangerouslySetInnerHTML={createMarkup()}></div>
+           <br/>
+           </div>
+       ) 
+     }
 
 
     render() {
         console.log("this.props : ", this.props);
         return (
             <div>
-                
-                {this.props.data.map(this.renderTitle)}
-                
+                <p>Read</p>
+
+                {this.props.data.map(this.renderPosts)}
             </div>
         );
     }

@@ -1,7 +1,6 @@
 @import "partials/0_reset";
 @import "partials/1_mixins";
 @import "partials/2_settings";
-
 ///////////////////////////////////
 ///****   some globals   ****///
 ///////////////////////////////////
@@ -16,6 +15,7 @@ img {
   vertical-align: bottom; //stops that annoying 2px gap at the btm of imgs
   height: auto;
 }
+
 .img-cont {
   max-width: 600px;
   margin: 2rem auto;
@@ -24,20 +24,17 @@ img {
 ////////////////////////////////////////////////////////////////////////////
 ///****   typography     typography     typography     typography   ****///
 ///////////////////////////////////////////////////////////////////////////
-
 /// sets the html global font size when your font-size is in REMS then it will change accordingly
 html {
-  font-size: 16px;
-  // @media (min-width: $media-sml) {font-size:16px}
+  font-size: 16px; // @media (min-width: $media-sml) {font-size:16px}
   @media (min-width: $media-med) {
     font-size: 20px;
-  }
-  // @media (min-width: $media-lrg) {font-size:18px}
+  } // @media (min-width: $media-lrg) {font-size:18px}
   // @media (min-width: $media-lrg-xl) {font-size:19px}
 }
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", sans-serif; // font-family: cursive;
 }
 
 //specific fo h tags
@@ -49,28 +46,32 @@ body {
 h1 {
   @include fontSize(44px);
 }
+
 h2 {
   @include fontSize(34px);
 }
+
 h3 {
   @include fontSize(26px);
 }
+
 h4 {
   @include fontSize(20px);
 }
+
 h5 {
   @include fontSize(18px);
 }
 
 p {
   @include fontSize(16px);
-  line-height: 1.4;
-  // margin-bottom: 1rem;
+  line-height: 1.4; // margin-bottom: 1rem;
 }
 
 small {
   @include fontSize(14px);
 }
+
 ////****href ****/////
 a,
 a:link,
@@ -86,11 +87,88 @@ a:active {
 .container {
   position: relative;
   width: 95%;
-  margin: auto;
+  margin: 3rem auto 0;
   max-width: 1200px;
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
 // REACT STYLE ---- REACT STYLE ---- REACT STYLE ----
+.form-cont {
+  width: 60%;
+  margin: 5rem auto;
+}
+
+label {
+  margin-right: 1rem;
+}
+
+.quill {
+  margin: 1rem 0;
+}
+
+.single-cont {
+  width: 600px;
+}
+
+header {
+  margin: 0rem 0 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid grey;
+}
+
+// .ql-editor {
+ 
+// }
+/* Set default font-family */
+
+/* Show custom fonts in the drop down*/
+.ql-picker.ql-font {
+  .ql-picker-item {
+    font-size: 0;
+    &:before {
+      content: attr(data-value) !important;
+      font-size: 14px;
+    }
+  }
+}
+
+/*  get the drop down label to show in the right font */
+
+.ql-font .ql-picker-options span[data-value="Comfortaa"]::before {
+  font-family: "Comfortaa";
+}
+
+.ql-font .ql-picker-options span[data-value="Montserrat"]::before {
+  font-family: "Montserrat";
+}
+
+.ql-font .ql-picker-options span[data-value="Slabo"]::before {
+  font-family: "Slabo";
+}
+
+/* get picked font to show in the drop down picker */
+
+.ql-picker.ql-font {
+  .ql-active {
+    &:before {
+      content: attr(data-value) !important;
+      font-size: 14px;
+    }
+  }
+}
+
+/* Set content in the editor to show selected font type*/
+
+.ql-font-Comfortaa {
+  font-family: 'Comfortaa', cursive;
+}
+
+.ql-font-Montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.ql-font-Slabo {
+  font-family: 'Slabo 27px', serif;
+}

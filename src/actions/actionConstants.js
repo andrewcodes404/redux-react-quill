@@ -1,2 +1,4 @@
 export const UPLOAD_DATA = 'UPLOAD_DATA'
 export const FETCH_DATA = 'FETCH_DATA'
+export const FETCH_SINGLE = 'FETCH_SINGLE'
+export const RESET_INITIAL_STATE = 'RESET_INITIAL_STATE'
